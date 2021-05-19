@@ -70,6 +70,12 @@ var fight = function(enemyName) {
 };
 
 // fight each enemy-robot by looping over them and fighting them one at a time
+var startGame = function() {
+    
+    playerHealth = 100;
+    playerAttack = 10; 
+    playerMoney = 10;
+
 for (var i = 0; i < enemyNames.length; i++) {
   // if player is still alive, keep fighting
   if (playerHealth > 0) {
@@ -88,9 +94,15 @@ for (var i = 0; i < enemyNames.length; i++) {
     // pass the pickedEnemyName variable's value into the fight function, where it will assume the value of the enemyName parameter
     fight(pickedEnemyName);
   }
+
+  startGame();
+
   // if player isn't alive, stop the game
   else {
     window.alert('You have lost your robot in battle! Game Over!');
     break;
   }
 }
+}
+
+startGame();
